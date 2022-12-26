@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <style>
+      h1 {
+        color: #1a64d6;
+        font-size: 34px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin: 0;
+      }
+      h2 {
+        font-size: 34px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        text-align: center;
+        margin: 0;
+      }
+
+      ul {
+        list-style: none;
+        margin: 16px auto;
+        padding: 0;
+      }
+      li {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin: 0 auto;
+        padding: 10px 0;
+        border-radius: 10px;
+        max-width: 400px;
+        transition: all 200ms ease-in-out;
+      }
+      p {
+        font-size: 18px;
+        opacity: 0.7;
+        text-align: center;
+        font-family: monospace;
+        margin: 1em auto;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 16px 24px;
+        background: #1a64d6;
+        color: #ffff;
+        font-size: 16px;
+        border: 1px solid #1a64d6;
+        border-radius: 30px;
+        box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+        transition: all 200ms ease-in-out;
+      }
+      button:hover {
+        background: #ffff;
+        color: #1a64d6;
+        cursor: pointer;
+      }
+      .tomorrow:hover {
+        background: #fffbef;
+      }
+      .saturday:hover {
+        background: #fffbef;
+      }
+      .sunday:hover {
+        background: #fffbef;
+      }
+    </style>
+    <h1>
+      🌤️<br />
+      Currently 21ºC in Spain
+    </h1>
+    <h2>13º / <strong>23º</strong></h2>
+    <ul>
+      <li class="tomorrow">
+        <h3>🌧️ Tomorrow</h3>
+        <p>10º / <strong>22º</strong></p>
+      </li>
+      <li class="saturday">
+        <h3>🌥️ Saturday</h3>
+        <p>15º / <strong>17º</strong></p>
+      </li>
+      <li class="sunday">
+        <h3>☀️ Sunday</h3>
+        <p>25º /<strong>28º</strong></p>
+      </li>
+    </ul>
+    <button>Change city</button>
+    <p>Coded by Dana Visnitchi</p>
+    <script>
+      function pressButton() {
+        let city = prompt(`What city do you live in?`);
+        let temperature = prompt(`What temperature is it?`);
+        let h1 = document.querySelector(`h1`);
+        if (temperature >= 0) {
+          h1.innerHTML = `😊<br/> Currently ${temperature}ºC in ${city}`;
+        } else {
+          h1.innerHTML = `🥶<br/> Currently ${temperature}ºC in ${city}`;
+        }
+      }
+      let changeCity = document.querySelector(`button`);
+      changeCity.addEventListener(`click`, pressButton);
+    </script>
+  </body>
+</html>
